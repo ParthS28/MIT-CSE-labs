@@ -1,3 +1,3 @@
 # MIT-CSE-labs
 
-Just for reference.
+Lab materials for batch of 2023. Just for reference.
