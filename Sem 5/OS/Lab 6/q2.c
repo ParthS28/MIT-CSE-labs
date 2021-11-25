@@ -1,0 +1,39 @@
+// summation non negative
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+void* calc(void* param){
+    int* arr = (int *)param;
+    int n = arr[0];
+    int sum = 0;
+    for(int i = 1; i <= n; i++){
+        if(arr[i] >= 0) 
+            sum += arr[i];
+    }
+    arr[n+1] = sum;
+    return NULL;
+}
+
+int main(int argc, char* argv[]){
+    int n;
+    printf("Enter the number of terms\n");
+    scanf("%d", &n);
+
+    int arr[100];
+    for(int i = 0; i <= n+1; i++){
+        arr[i] = 0;
+    }
+    arr[0] = n;
+    printf("Enter terms\n");
+    for(int i = 1; i <= n; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    pthread_t thread;
+    pthread_create(&thread, 0, &calc, (void *)arr);
+    pthread_join(thread, 0);
+
+    printf("Sum = %d\n", arr[n+1]);
+    return 0;
+}
