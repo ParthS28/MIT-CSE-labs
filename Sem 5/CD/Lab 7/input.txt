@@ -1,0 +1,1 @@
+SUBTRACT 100 FROM tot1 a$
