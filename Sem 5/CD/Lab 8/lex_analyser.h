@@ -359,6 +359,6 @@ struct token getNextToken(FILE *fa)
 		else
 			col++;
 	}
-    // printf("%s\n", tkn.lexeme);
+    printf("%s\n", tkn.lexeme);
 	return tkn;
 }
