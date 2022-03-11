@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>birthday</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+        $("#update").click(function(){
+        var style = $('input[type="radio"]:checked').val();
+        var color = $('#colors').val();
+        var font = $('#font').val();
+        var fontsize = parseInt($("#size").val());
+        var checkbox = $('input[type="checkbox"]:checked').val();
+        var text = $("#textbox").val();
+        console.log({style, color, font, fontsize, checkbox, text});
+        $("#card").css("background-color",color);
+        $("#card").css("border-style",style);
+        $("#card").css("font-size",fontsize);
+        $("#card").css("font-family",font);
+        $("#card").html(text);
+        if(checkbox){
+        // $('#card').css({"background-image", url("hi.jpg")});
+        var imageUrl = "hi.png";
+        $("#card").css("background-image", "url(" + imageUrl + ")");
+        $("#card").css("background-size","75% 50%" );
+        $("#card").css("background-repeat","no-repeat" );
+        $("#card").css("background-position","center" );
+        }
+        else{
+        $("#card").css("background-image", "none");
+        }
+
+        });
+        });
+    </script>
+</head>
+    <body>
+    <table style="width:100%">
+    <td>
+    Choose a background color: <br><select name="colors" id="colors">
+    <option value="yellow">Yellow</option>
+    <option value="orange">Orange</option>
+    <option value="blue">Blue</option>
+    </select>
+    <br>
+    <br>
+    Choose a font: <br><select name="font" id="font">
+    <option value="verdana">Verdana</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Arial">Arial</option>
+    <option value="Helvetica">Helvetica</option>
+    </select>
+    <br>
+    <br>
+    Enter font size: <br> <input type="size" id="size"></input>
+    <br>
+
+
+
+    Choose a border style:<br> <input type="radio" id="None" name="border-style" value="None">
+    <label for="None">None</label><br>
+    <input type="radio" id="Double" name="border-style" value="Double">
+    <label for="Double">Double</label><br>
+    <input type="radio" id="Solid" name="border-style" value="Solid">
+    <label for="Solid">Solid</label>
+    <br>
+    <br>
+    <input type="checkbox" id="picture" name="picture" value="pic">
+    <label for="picture"> Add default picture</label>
+    <br>
+    <br>
+    Enter greeting text below: <br> <input type="text" id="textbox"></input>
+    <br>
+    <button id="update">Update</button>
+    <br>
+    <br>
+    </td>
+    <td>
+    <div id ="card" style="height: 400px; width: 300px;background: yellow; text-align: center;" ></div>
+    </td>
+    </table>
+    </body>
+</html>

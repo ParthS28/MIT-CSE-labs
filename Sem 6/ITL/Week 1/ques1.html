@@ -1,0 +1,46 @@
+<!-- Write a web page which contains table with 3 X 3 dimensions (fill some data) and
+one image. Style the rows with alternate color. Move the table and image together from
+right to left when button is clicked. -->
+
+<html>
+    <head>
+        <title>First program</title>
+        <script type = "text/javascript" src = https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js>
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("table").animate({left:'250px'});
+                    $("p").animate({left:'250px'});
+                });
+                
+            });
+        </script>
+    </head>
+
+    <body>
+        
+        <table style="position: relative;">
+            <tr bgcolor="blue">
+                <th>Heading 1</th>
+                <th>Heading 2</th>
+                <th>Heading 3</th>
+            </tr>
+            <tr bgcolor="red">
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+            
+            <tr bgcolor="orange">
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+        </table>
+        <p style="position: relative;">
+            <img src="hi.png" alt="Bridge" width="100" height="50">
+        </p>
+        <button>Animate</button>
+    </body>
+</html>

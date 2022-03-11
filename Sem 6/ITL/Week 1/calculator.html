@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+//append string if numbers are pressed
+$(".clc").click(function () {
+
+$("#display").val($("#display").val() + $(this).val());
+
+
+
+});
+//clear string if clear pressed
+$(".clear").click(function () {
+$("#display").val(' ');
+});
+//calculate value if result is pressed
+$(".result").click(function () {
+$("#display").val(eval($("#display").val()));
+});
+});
+</script>
+
+
+
+</head>
+<body>
+<h1>Calculator in jQuery</h1>
+<div class="main">
+<input id="display" type="text" placeholder=""><br>
+
+
+
+<input class="clc" type="button" value="7">
+<input class="clc" type="button" value="8">
+<input class="clc" type="button" value="9">
+<input class="clc" type="button" value="*">
+<br>
+<input class="clc" type="button" value="4">
+<input class="clc" type="button" value="5">
+<input class="clc" type="button" value="6">
+<input class="clc" type="button" value="/">
+<br>
+<input class="clc" type="button" value="1">
+<input class="clc" type="button" value="2">
+<input class="clc" type="button" value="3">
+<input class="clc" type="button" value="-">
+<br>
+<input class="clear" type="button" value="C">
+<input class="clc" type="button" value="0">
+<input class="clc" type="button" value="+">
+<input class="result" type="button" value="=">
+</div>
+</body>
+</html>
