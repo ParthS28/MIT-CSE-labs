@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>bill</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type = "text/javascript" language = "javascript">
-$(document).ready(function(){
-$('#bill').click(function(){
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bill</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('#bill').click(function () {
 
-let brand_name = $('#brand-choice').val();
-let quan = $('#quantity').val();
-console.log({quan});
-let amt = 0;
-let price = 0;
-if(brand_name == 'HP'){
-if($('#laptop').prop("checked") == true){
-price = 10000;
-}
-else{
-price = 5000;
-}
-}
-else if(brand_name == 'Nokia'){
-if($('#laptop').prop("checked") == true){
-price = 11000;
-}
-else{
-price = 6000;
-}
-}
-else if(brand_name == 'Samsung'){
-if($('#laptop').prop("checked") == true){
-price = 12000;
-}
-else{
-price = 7000;
-}
-}
-else if(brand_name == 'Motorola'){
-if($('#laptop').prop("checked") == true){
-price = 13000;
-}
-else{
-price = 8000;
-}
-}
-else{
-if($('#laptop').prop("checked") == true){
-price = 14000;
-}
-else{
-price = 9000;
-}
-}
-let n = parseInt(quan);
-amt = n*price;
-alert(amt);
+                let brand_name = $('#brand-choice').val();
+                let quan = $('#quantity').val();
+                console.log({ quan });
+                let amt = 0;
+                let price = 0;
+                if (brand_name == 'HP') {
+                    if ($('#laptop').prop("checked") == true) {
+                        price = 10000;
+                    }
+                    else {
+                        price = 5000;
+                    }
+                }
+                else if (brand_name == 'Nokia') {
+                    if ($('#laptop').prop("checked") == true) {
+                        price = 11000;
+                    }
+                    else {
+                        price = 6000;
+                    }
+                }
+                else if (brand_name == 'Samsung') {
+                    if ($('#laptop').prop("checked") == true) {
+                        price = 12000;
+                    }
+                    else {
+                        price = 7000;
+                    }
+                }
+                else if (brand_name == 'Motorola') {
+                    if ($('#laptop').prop("checked") == true) {
+                        price = 13000;
+                    }
+                    else {
+                        price = 8000;
+                    }
+                }
+                else {
+                    if ($('#laptop').prop("checked") == true) {
+                        price = 14000;
+                    }
+                    else {
+                        price = 9000;
+                    }
+                }
+                let n = parseInt(quan);
+                amt = n * price;
+                alert(amt);
 
-});
-});
-</script>
+            });
+        });
+    </script>
 </head>
+
 <body style="background-color:powderblue;">
-<label for="brand-choice">Choose a Brand:</label>
-<input list="brands" id="brand-choice" name="brand-choice" />
-<datalist id="brands">
-<option value="HP"></option>
-<option value="Nokia"></option>
-<option value="Samsung"></option>
-<option value="Motorola"></option>
-<option value="Apple"></option>
-</datalist>
-<p>Choose:</p>
-<div>
-<input type="checkbox" id="laptop" name="laptop" checked>
-<label for="laptop">Laptop</label>
-</div>
-<div>
-<input type="checkbox" id="mobile" name="mobile">
-<label for="mobile">Mobile</label>
-</div>
-<div>
-<label for="quantity">Quantity</label>
-<input type="text" id="quantity" name="quantity" required>
-</div>
-<button id="bill">Bill Amount</button>
-<p id="write-bill"></p>
+    <label for="brand-choice">Choose a Brand:</label>
+    <input list="brands" id="brand-choice" name="brand-choice" />
+    <datalist id="brands">
+        <option value="HP"></option>
+        <option value="Nokia"></option>
+        <option value="Samsung"></option>
+        <option value="Motorola"></option>
+        <option value="Apple"></option>
+    </datalist>
+    <p>Choose:</p>
+    <div>
+        <input type="checkbox" id="laptop" name="laptop" checked>
+        <label for="laptop">Laptop</label>
+    </div>
+    <div>
+        <input type="checkbox" id="mobile" name="mobile">
+        <label for="mobile">Mobile</label>
+    </div>
+    <div>
+        <label for="quantity">Quantity</label>
+        <input type="text" id="quantity" name="quantity" required>
+    </div>
+    <button id="bill">Bill Amount</button>
+    <p id="write-bill"></p>
 </body>
+
 </html>
